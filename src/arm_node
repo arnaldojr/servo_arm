@@ -1,4 +1,4 @@
-r#!/usr/bin/env python
+#!/usr/bin/env python
 
 # Importa as bibliotecas do ROS e do Python
 import rospy
