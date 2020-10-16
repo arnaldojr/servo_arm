@@ -65,12 +65,9 @@ def RecolheBraco():
 
 # Funcao posicao Braco
 def PosBraco(command):
-    # converte o valor recebido em radianos para entrada do PWM
-    commandBraco = 5 + (2,67*command) + (0,444 * command**2)
+    valor = float(command)
+    commandBraco =5+ 2.67*valor + (0.444*valor**2)
     pwmMotorBraco.ChangeDutyCycle(commandBraco)
-
-
-
 
 # Funcao abre Garra
 def AbreGarra():
@@ -153,8 +150,9 @@ def CommandCallback1(commandMessage):
 # Incia o node 
 rospy.init_node('driverarm')
 
-#joint1 = junta do braço
-#joint2 = junta da garra
+#joint1 braco
+#joint2 garra
+
 
 #rospy.Subscriber('servo_garra/command', String, CommandCallback)
 rospy.Subscriber('joint2_position_controller/command', Float64, CommandCallback)
