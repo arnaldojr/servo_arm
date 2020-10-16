@@ -2,7 +2,7 @@
 
 # Importa as bibliotecas do ROS e do Python
 import rospy
-from std_msgs.msg import String, Float32
+from std_msgs.msg import String, Float64
 
 import RPi.GPIO as GPIO
 import time as time
@@ -146,13 +146,10 @@ def CommandCallback1(commandMessage):
 # Incia o node 
 rospy.init_node('driverarm')
 
-# joint1 = junta do braço
-# joint2 = junta da garra
- 
 #rospy.Subscriber('servo_garra/command', String, CommandCallback)
-rospy.Subscriber('/joint2_position_controller/command', Float64, CommandCallback)
+rospy.Subscriber('joint2_position_controller/command', Float64, CommandCallback)
 #rospy.Subscriber('servo_braco/command', String, CommandCallback1)
-rospy.Subscriber('/joint1_position_controller/command', Float64, CommandCallback1)
+rospy.Subscriber('joint1_position_controller/command', Float64, CommandCallback1)
 
 rospy.spin()
 print('Shutting down: stopping motors')
