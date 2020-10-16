@@ -153,8 +153,8 @@ def CommandCallback1(commandMessage):
 # Incia o node 
 rospy.init_node('driverarm')
 
-# joint1 = junta do braço
-# joint2 = junta da garra
+#joint1 = junta do braço
+#joint2 = junta da garra
 
 #rospy.Subscriber('servo_garra/command', String, CommandCallback)
 rospy.Subscriber('joint2_position_controller/command', Float64, CommandCallback)
